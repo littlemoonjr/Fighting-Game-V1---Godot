@@ -10,7 +10,6 @@ distance = -10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbgi4"]
 font = ExtResource("4_jyhfs")
-font_size = 45
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
@@ -46,16 +45,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_sugp2")
-
-[node name="test" type="Label" parent="CanvasLayer/Control" unique_id=1925064774]
-layout_mode = 0
-offset_left = 167.0
-offset_top = -2.0
-offset_right = 274.0
-offset_bottom = 45.0
-text = "THIS IS A TEST"
-label_settings = SubResource("LabelSettings_tbgi4")
-horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1232822765]
 layout_mode = 0
