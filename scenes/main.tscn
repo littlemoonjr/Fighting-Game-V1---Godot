@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bm702bu0xegdu"]
+
+[ext_resource type="PackedScene" uid="uid://c0adt1mmnek4y" path="res://scenes/player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://biyek8x0lsthv" path="res://maps/grid.jpg" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bb380uxvauk7" path="res://scenes/control.gd" id="3_sugp2"]
+[ext_resource type="FontFile" uid="uid://cndc3m5on2u41" path="res://fonts/Bodoni Z37 M Compressed Bold Italic.otf" id="4_jyhfs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
+distance = -10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbgi4"]
+font = ExtResource("4_jyhfs")
+font_size = 45
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.60376686, 0.31282744, 0, 0.29411766)
+
+[node name="Main" type="Node2D" unique_id=1241799824]
+
+[node name="player" parent="." unique_id=755119613 instance=ExtResource("1_ig7tw")]
+position = Vector2(-7, -166)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=778320789]
+position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=135321174]
+position = Vector2(6, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1028791161]
+shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="Grid" type="Sprite2D" parent="." unique_id=269191272]
+z_index = -2
+position = Vector2(97, -300)
+scale = Vector2(3, 3)
+texture = ExtResource("2_0xm2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1925254353]
+offset = Vector2(10, 0)
+transform = Transform2D(1, 0, 0, 1, 10, 0)
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1306053941]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_sugp2")
+
+[node name="test" type="Label" parent="CanvasLayer/Control" unique_id=1925064774]
+layout_mode = 0
+offset_left = 167.0
+offset_top = -2.0
+offset_right = 274.0
+offset_bottom = 45.0
+text = "THIS IS A TEST"
+label_settings = SubResource("LabelSettings_tbgi4")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1232822765]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_tbgi4")

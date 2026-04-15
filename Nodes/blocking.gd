@@ -15,7 +15,8 @@ func process_physics(delta : float) -> State:
 	var direction = Input.get_axis("move_left","move_right")
 	var movement = direction * Character.SPEED * 0.05
 	
-	Character.sprite.flip_h = movement < 0
+	if movement != 0:
+		Character.sprite.flip_h = movement < 0
 	
 	if direction:
 		Character.velocity.x = movement

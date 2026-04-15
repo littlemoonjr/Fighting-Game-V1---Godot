@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0adt1mmnek4y"]
 
-[ext_resource type="Script" uid="uid://bq0oaik8pwoe4" path="res://player.gd" id="1_2hs0m"]
+[ext_resource type="Script" uid="uid://bq0oaik8pwoe4" path="res://Nodes/player.gd" id="1_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://diu5j5ewi4f8" path="res://Samurai/Idle.png" id="2_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://ik5qob5cewyw" path="res://Samurai/Shield.png" id="2_ivps1"]
 [ext_resource type="Texture2D" uid="uid://c565q3o4vyjt4" path="res://Samurai/Attack_1.png" id="2_u1c27"]
@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://besdddmo6o2px" path="res://Samurai/Run.png" id="4_b26j0"]
 [ext_resource type="Texture2D" uid="uid://bcnfegn4k51b8" path="res://Samurai/Attack_3.png" id="4_q13i1"]
 [ext_resource type="Texture2D" uid="uid://bf6jt728ncwd4" path="res://Samurai/Walk.png" id="5_n7ghd"]
-[ext_resource type="Script" uid="uid://dkpnq76cfujpj" path="res://state_machine.gd" id="6_dw050"]
-[ext_resource type="Script" uid="uid://cempn6o38qh74" path="res://jump.gd" id="7_1jxqw"]
-[ext_resource type="Script" uid="uid://b6mjan3he6nac" path="res://state.gd" id="8_b26j0"]
-[ext_resource type="Script" uid="uid://6r328av2v2av" path="res://idle.gd" id="8_dw050"]
-[ext_resource type="Script" uid="uid://y106sole56w3" path="res://fall.gd" id="8_n7ghd"]
-[ext_resource type="Script" uid="uid://b7l546ab4yof2" path="res://move.gd" id="10_nvl01"]
-[ext_resource type="Script" uid="uid://dytlrccox2c1m" path="res://blocking.gd" id="12_urp6f"]
+[ext_resource type="Script" uid="uid://dkpnq76cfujpj" path="res://Nodes/state_machine.gd" id="6_dw050"]
+[ext_resource type="Script" uid="uid://cempn6o38qh74" path="res://Nodes/jump.gd" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://b6mjan3he6nac" path="res://Nodes/state.gd" id="8_b26j0"]
+[ext_resource type="Script" uid="uid://6r328av2v2av" path="res://Nodes/idle.gd" id="8_dw050"]
+[ext_resource type="Script" uid="uid://y106sole56w3" path="res://Nodes/fall.gd" id="8_n7ghd"]
+[ext_resource type="Script" uid="uid://b7l546ab4yof2" path="res://Nodes/move.gd" id="10_nvl01"]
+[ext_resource type="Script" uid="uid://dytlrccox2c1m" path="res://Nodes/blocking.gd" id="12_urp6f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gr2b"]
 atlas = ExtResource("2_u1c27")
