@@ -4,16 +4,57 @@
 [ext_resource type="Texture2D" uid="uid://biyek8x0lsthv" path="res://maps/grid.jpg" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bb380uxvauk7" path="res://scenes/control.gd" id="3_sugp2"]
 [ext_resource type="FontFile" uid="uid://cndc3m5on2u41" path="res://fonts/Bodoni Z37 M Compressed Bold Italic.otf" id="4_jyhfs"]
+[ext_resource type="FontFile" uid="uid://bqwe3kxts3ayd" path="res://fonts/Bodoni Z37 M Compressed Bold.otf" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dmhtahdewynyc" path="res://Select.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://boiqi15wfky3y" path="res://moonn.png" id="7_o6xl0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
 distance = -10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbgi4"]
 font = ExtResource("4_jyhfs")
-outline_size = 2
+font_size = 10
+outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_color = Color(0.60376686, 0.31282744, 0, 0.29411766)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6xl0"]
+bg_color = Color(0.44705883, 0.62352943, 0.7529412, 0.40392157)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
+font = ExtResource("5_tbgi4")
+outline_size = 2
+outline_color = Color(0.4392157, 0.27450982, 0, 0.43529412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("6_tefeu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("6_tefeu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("6_tefeu")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_choun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D" unique_id=1241799824]
 
@@ -42,13 +83,43 @@ transform = Transform2D(1, 0, 0, 1, 10, 0)
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1306053941]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -9.0
+offset_right = 471.0
+offset_bottom = 265.0
 script = ExtResource("3_sugp2")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1232822765]
+[node name="FPSCounter" type="Label" parent="CanvasLayer/Control" unique_id=140783398]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "FPS"
 label_settings = SubResource("LabelSettings_tbgi4")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=1383057666]
+clip_contents = true
+layout_mode = 0
+offset_left = 368.0
+offset_top = 2.0
+offset_right = 434.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6xl0")
+
+[node name="CharacterName" type="Label" parent="CanvasLayer/Control/Panel" unique_id=1232822765]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 65.0
+offset_bottom = 19.0
+text = "Samurai"
+label_settings = SubResource("LabelSettings_tefeu")
+horizontal_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=439863325]
+position = Vector2(453.5, 22.5)
+scale = Vector2(0.6093751, 0.609375)
+sprite_frames = SubResource("SpriteFrames_choun")
+autoplay = "default"
+frame = 1
+frame_progress = 0.15072243
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/AnimatedSprite2D" unique_id=724995268]
+texture = ExtResource("7_o6xl0")

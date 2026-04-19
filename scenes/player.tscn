@@ -435,6 +435,8 @@ JUMP_VELOCITY = 500.0
 position = Vector2(1, -64)
 sprite_frames = SubResource("SpriteFrames_qwsg1")
 animation = &"attack 1"
+frame = 5
+frame_progress = 1.0
 
 [node name="physicshitbox" type="CollisionShape2D" parent="." unique_id=710014009]
 position = Vector2(2.5, -39)
@@ -461,6 +463,10 @@ script = ExtResource("10_nvl01")
 animationname = "run"
 
 [node name="blocking" type="Node" parent="State Machine" unique_id=1377777655]
+script = ExtResource("12_urp6f")
+animationname = "shield"
+
+[node name="attack" type="Node" parent="State Machine" unique_id=1724724244]
 script = ExtResource("12_urp6f")
 animationname = "shield"
 
